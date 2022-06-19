@@ -37,6 +37,8 @@ function ConvertHandler() {
   this.getUnit = function(input) {
     let split = input.search(/[a-zA-Z]/);
     let unit = input.slice(split);
+    if (unit != "L") unit = unit.toLowerCase();
+    if (unit == "l") unit = unit.toUpperCase();
     if (Object.keys(this.spellOut).includes(unit)) {
       return unit;
     } else {
