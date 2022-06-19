@@ -37,6 +37,10 @@ suite('Unit Tests', function(){
         assert.equal(convertHandler.getNum("4/4L"), 1);
     });
 
+    test('fractional input with decimal', () => {
+        assert.equal(convertHandler.getNum("4.4/4.4L"), 1);
+    });
+
     test('double fraction', () => {
         assert.throw(() => convertHandler.getNum("4/3/4L"));
     });
